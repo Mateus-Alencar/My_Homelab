@@ -22,4 +22,4 @@ homelab-devops/
 
 ## Referências
 
-[Documentação - Instalação e configuração do Ansible](https://github.com/Mateus-Alencar/ansible-infra-automation/blob/main/Docs/Add_Control_Node.md)
+[Documentação Pessoal - Instalação e configuração do Ansible](https://github.com/Mateus-Alencar/ansible-infra-automation/blob/main/Docs/Add_Control_Node.md)
