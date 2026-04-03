@@ -20,6 +20,8 @@ sudo systemctl start docker
 ```bash
 docker run -d \
   --name jenkins \
+  # Configura esse container para iniciar junto com a instância
+  --restart unless-stopped \
   # HOST:CONTAINER / porta_da_sua_vm : porta_dentro_do_container
   -p 8080:8080 \
   # Cria um volume persistente chamado jenkins_home
