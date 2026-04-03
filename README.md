@@ -8,7 +8,7 @@ homelab-devops/
 │  
 ├── docs/  
 │   ├── [arquitetura.md](./docs/arquitetura.md)  
-│   ├── rede.md  
+│   ├── [Instalação do Jenkins em container Docker](./docs/instalacao_jenkins.md)  
 │   ├── servidores.md  
 │   ├── pipelines.md  
 │   └── backup.md  
