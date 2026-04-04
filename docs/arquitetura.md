@@ -1,3 +1,6 @@
+## Mapa Conceitual
+![alt text](./MapaConceitual/Mapa_Conceitual.png)
+
 ### Notebook IdeaPad (16 CPU, 16Gb RAM)
 - SSH
 - GIT
