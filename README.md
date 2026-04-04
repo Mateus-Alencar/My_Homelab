@@ -10,16 +10,16 @@ homelab-devops/
 │      └── [Dockerfile](./Dockerfiles/Jenkins_Dockerfile/Dockerfile)  
 │  
 ├── docs/  
-│   ├── [arquitetura.md](./docs/arquitetura.md)  
-│   ├── [Instalação do Jenkins em container Docker](./docs/instalacao_jenkins.md)  
-│   ├── servidores.md  
-│   ├── pipelines.md  
-│   └── backup.md  
+│   ├── [Mapa Conceitual](./docs/MapaConceitual/Mapa_Conceitual.png)  
+|   ├── [arquitetura.md](./docs/arquitetura.md)  
+│   └── [Instalação do Jenkins em container Docker](./docs/instalacao_jenkins.md)  
 │  
 |── Jenkinsfile/  
-│   └── [Upgrade_Server](./Jenkinsfile/Upgrade_Server.yaml)  
+│   ├── [DesligamentosVMs](./Jenkinsfile/DesligamentoVMs.groovy)
+│   └── [Upgrade_Server](./Jenkinsfile/Upgrade_Server.groovy)  
 │  
 ├── playbooks/  
+│   ├── [DesligamentoVMs](./playbooks/DesligamentoVMs.yaml)
 |   └── [update_system.yaml](./playbooks/update_system.yaml)  
 │  
 ├── kubernetes/  

@@ -15,7 +15,7 @@
     Execute o comando para gerar a imagem na mesma pasta do `Dockerfile`: `docker build -t jenkins-ansible .`
 
 3. ### Subir o Jenkins em container
-    ```bash
+    ```groovy
     docker run -d \
     --name jenkins \
     # Configura esse container para iniciar junto com a instância
@@ -54,7 +54,7 @@
 ## Integração Jenkins + Ansible
 
 Jenkins executa o Ansible dentro do próprio container via shell
-```yaml
+```groovy
 pipeline {
     agent any
 

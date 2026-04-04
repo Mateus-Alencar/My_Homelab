@@ -1,0 +1,10 @@
+---
+- name: Desligamento automático das VMs
+  hosts: targets
+  become: true
+  tasks:
+    - name: "Desligamento"
+      command: /sbin/shutdown now
+      async: 1 # Permite que o Ansible dispare o comando e encerre a conexão
+      poll: 0  # Não espera o retorno (já que o servidor vai cair)
+...
