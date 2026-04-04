@@ -5,6 +5,9 @@ Ambiente DevOps completo com provisionamento automatizado, CI/CD, backup e orque
 ## Estrutura do repositório  
   
 homelab-devops/  
+├── Dockerfiles/
+│  ├── Jenkins_Dockerfile
+│      └── [Dockerfile](./Dockerfiles/Jenkins_Dockerfile/Dockerfile)
 │  
 ├── docs/  
 │   ├── [arquitetura.md](./docs/arquitetura.md)  
@@ -13,12 +16,15 @@ homelab-devops/
 │   ├── pipelines.md  
 │   └── backup.md  
 │  
+|── Jenkinsfile/  
+│   └── [Upgrade_Server](./Jenkinsfile/Upgrade_Server.yaml)
+│  
 ├── playbooks/  
 |   ├── [update_system.yaml](./playbooks/update_system.yaml)  
 ├── jenkins/  
 ├── kubernetes/  
 ├── bacula/  
-└── README.md  
+└── [README.md](./README.md)  
 
 ## Referências
 
