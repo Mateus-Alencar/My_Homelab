@@ -20,10 +20,12 @@ homelab-devops/
 │   └── [Upgrade_Server](./Jenkinsfile/Upgrade_Server.yaml)
 │  
 ├── playbooks/  
-|   ├── [update_system.yaml](./playbooks/update_system.yaml)  
-├── jenkins/  
+|   └── [update_system.yaml](./playbooks/update_system.yaml)  
+│  
 ├── kubernetes/  
+│  
 ├── bacula/  
+│  
 └── [README.md](./README.md)  
 
 ## Referências
