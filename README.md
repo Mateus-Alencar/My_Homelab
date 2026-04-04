@@ -24,7 +24,6 @@ homelab-devops/
 │  
 ├── kubernetes/  
 │  
-│  
 └── [README.md](./README.md)  
 
 ## Referências
