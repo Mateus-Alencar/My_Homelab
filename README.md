@@ -15,11 +15,11 @@ homelab-devops/
 │   └── [Instalação do Jenkins em container Docker](./docs/instalacao_jenkins.md)  
 │  
 |── Jenkinsfile/  
-│   ├── [DesligamentosVMs](./Jenkinsfile/DesligamentoVMs.groovy)
+│   ├── [DesligamentosVMs](./Jenkinsfile/DesligamentoVMs.groovy)  
 │   └── [Upgrade_Server](./Jenkinsfile/Upgrade_Server.groovy)  
 │  
 ├── playbooks/  
-│   ├── [DesligamentoVMs](./playbooks/DesligamentoVMs.yaml)
+│   ├── [DesligamentoVMs](./playbooks/DesligamentoVMs.yaml)  
 |   └── [update_system.yaml](./playbooks/update_system.yaml)  
 │  
 ├── kubernetes/  
