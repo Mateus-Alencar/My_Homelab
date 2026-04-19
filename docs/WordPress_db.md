@@ -1,5 +1,11 @@
 ## Pipeline para provisionar um ambiente WordPress
 
+> [!WARNING]  
+> Em caso de dúvida sobre o gerencimento de pastas, consulte o [modelo conceitual](./MapaConceitual/Mapa_Conceitual.png) e explicação sobre a [arquitetura do meu HomeLab](../docs/arquitetura.md) . 
+
+> [!WARNING]  
+> Em caso de erros na pipeline do jenkins, consulte a forma de como o Jenkins e Ansible foram [configurados](../docs/instalacao_jenkins.md) com seus respectivos volumes  
+
 Esta pipeline utiliza o Jenkins em conjunto com o Ansible para realizar o provisionamento de um ambiente de testes Wordpress  
 
 1. Copie o conteúdo da [Playbook](../playbooks/prov_Wordpress.yaml) para a pasta: `/home/jenkins/playbooks_ansible` da instância do Jenkins.  
@@ -50,9 +56,9 @@ volumes:  # Definição dos volumes nomeados
   wp_data:  # Volume do WordPress (Ele irá armazenar temas e plugins)
 ```
 
-3. Crie o arquivo [.env](../docker-compose_files/WordPress/.env) em `/home/jenkins/playbooks_ansible/files/.env`  
+3. Crie o arquivo ` em `/home/jenkins/playbooks_ansible/files/.env`  
   > [!NOTE]  
-  > O .env serve para separar configurações (sensíveis) do código, deixando seu ambiente mais organizado, seguro e fácil de manter.
+  > O `.env` serve para separar configurações (sensíveis) do código, deixando seu ambiente mais organizado, seguro e fácil de manter.
 
 4. Ajuste as permissões: Execute os comandos abaixo na instância do Jenkins  
     ```bash
