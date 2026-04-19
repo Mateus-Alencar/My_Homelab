@@ -5,6 +5,9 @@ Ambiente DevOps completo com provisionamento automatizado, CI/CD, backup e orque
 ## Estrutura do repositório  
   
 homelab-devops/  
+├── docker-compose_files/  
+│  ├── WordPress  
+│      └── [docker-compose.yml](./docker-compose_files/WordPress/docker-compose.yml)   
 ├── Dockerfiles/  
 │  ├── Jenkins_Dockerfile  
 │      └── [Dockerfile](./Dockerfiles/Jenkins_Dockerfile/Dockerfile)  
@@ -12,6 +15,7 @@ homelab-devops/
 ├── docs/  
 │   ├── [Mapa Conceitual](./docs/MapaConceitual/Mapa_Conceitual.png)  
 |   ├── [arquitetura.md](./docs/arquitetura.md)  
+|   ├── [WordPress_db.md](./docs/WordPress_db.md)  
 │   └── [Instalação do Jenkins em container Docker](./docs/instalacao_jenkins.md)  
 │  
 |── Jenkinsfile/  

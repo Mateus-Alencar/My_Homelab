@@ -1,0 +1,17 @@
+---
+- name: Update and Upgrade Debian Linux Servers
+  hosts: targets
+  become: true
+  tasks:
+    # Primeira etapa: Apenas atualiza a lista de repositórios (apt update)
+    - name: "Atualizando lista de pacotes (apt update)"
+      ansible.builtin.apt:
+        update_cache: yes
+        name: "*"        # O Ansible exige o nome se não houver 'upgrade'
+        state: present   # 'present' apenas garante que o cache rode sem mexer nos pacotes ainda
+
+    # Segunda etapa: Faz o upgrade real dos pacotes
+    - name: "Realizando upgrade do sistema (apt upgrade)"
+      ansible.builtin.apt:
+        upgrade: yes
+...
