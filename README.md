@@ -22,7 +22,7 @@ homelab-devops/
 |   ├── [arquitetura.md](./docs/arquitetura.md)  
 |   ├── [WordPress_db.md](./docs/WordPress_db.md)  
 |   ├── [DPL-Postgres](./docs/DPL-Postgres.md)  
-|   ├── [DPL-Cloudbeaver](./docs/DPL-CloudBeaver.md)
+|   ├── [DPL-Cloudbeaver](./docs/DPL-CloudBeaver.md)  
 │   └── [Instalação do Jenkins em container Docker](./docs/instalacao_jenkins.md)  
 │  
 |── Jenkinsfile/  
