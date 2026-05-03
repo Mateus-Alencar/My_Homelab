@@ -1,0 +1,20 @@
+---
+- name: Configuração inicial dos servidores
+  hosts: targets
+  become: true
+
+  tasks:
+    - name: Garantir que o arquivo vimrc existe
+      ansible.builtin.file:
+        path: /etc/vim/vimrc
+        state: touch
+
+    - name: Adicionar configurações no vimrc
+      ansible.builtin.blockinfile:
+        path: /etc/vim/vimrc
+        marker: "\" {mark} ANSIBLE MANAGED BLOCK - VIM CONFIG"
+        block: |
+          set number
+          set cursorcolumn
+          set cursorline
+...
