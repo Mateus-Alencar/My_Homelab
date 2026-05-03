@@ -56,7 +56,7 @@ volumes:  # Definição dos volumes nomeados
   wp_data:  # Volume do WordPress (Ele irá armazenar temas e plugins)
 ```
 
-3. Crie o arquivo ` em `/home/jenkins/playbooks_ansible/files/.env`  
+3. Crie o arquivo `.env `/home/jenkins/playbooks_ansible/files/.env`  
   > [!NOTE]  
   > O `.env` serve para separar configurações (sensíveis) do código, deixando seu ambiente mais organizado, seguro e fácil de manter.
 
@@ -67,3 +67,9 @@ volumes:  # Definição dos volumes nomeados
     sudo chmod -R 775 /home/jenkins/playbooks_ansible
     ```    
 5. Crie a pipeline pela Interface do Jenkins, chamada: Prov_Wordpress, com o segunte [conteúdo](../Jenkinsfile/Prov_Wordpress.groovy)
+
+### Ordem de execução da playbook
+1. Atualiza a lista de pacotes e instala o Docker
+2. Ativa o serviço do Docker e configura ele para iniciar junto com a instância
+3. Cria a pasta `/opt/wordpress` no servidor e copia para lá os arquivos de configuração: `docker-compose.yml` e as variáveis de ambiente: `.env`.
+4. Executa o comando `docker compose up -d` para baixar as imagens e iniciar os containers.
