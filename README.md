@@ -34,6 +34,9 @@ homelab-devops/
 |   └── [update_system.yaml](./playbooks/update_system.yaml)  
 │  
 ├── kubernetes/  
+├── ShellScripts/  
+|   ├── [HealthCheck](./ShellScripts/healthcheck.sh)  
+|   └── [Script Backup](./ShellScripts/script_backup.sh)  
 │  
 └── [README.md](./README.md)  
 
