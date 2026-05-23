@@ -1,0 +1,49 @@
+---
+- name: Scan de vulnerabilidades das imagens Docker com Trivy  
+  hosts: 192.168.100.4
+  become: true
+
+  tasks:
+    - name: Coletar lista de imagens Docker
+      ansible.builtin.command: docker images --format "{{ '{{' }} .Repository{{ '}}' }}:{{ '{{' }} .Tag{{ '}}' }}"
+      register: docker_images
+      changed_when: false
+
+    - name: Criando diretório que irá armazenar os resultados  
+      ansible.builtin.file:
+        path: /var/log/trivy
+        state: directory
+        mode: '0755'
+
+    - name: Realizando Scan com Trivy
+      ansible.builtin.command: >
+        trivy image --severity HIGH,CRITICAL 
+        --format json 
+        -o /var/log/trivy/{{ item | replace('/', '_') | replace(':', '_') }}.json {{ item }}
+      loop: "{{ docker_images.stdout_lines }}"
+      when: docker_images.stdout_lines | length > 0
+      changed_when: true
+
+    - name: Compactando o relatório gerado em um arquivo ZIP
+      community.general.archive:
+        path: /var/log/trivy/*.json
+        dest: /var/log/trivy/relatorio_vulnerabilidades.zip
+        format: zip
+      when: docker_images.stdout_lines | length > 0
+
+    - name: Enviando relatŕio por e-mail
+      community.general.mail:
+        host: ""
+        port: 587
+        username: "seu_usuario@exemplo.com"
+        password: "sua_senha_ou_token"
+        secure: starttls
+        to: "mateualencar195@gmail.com.br"
+        subject: "[Ansible] Relatório de Scan de Imagens Docker - Trivy"
+        body: |
+          O scan de vulnerabilidades das imagens Docker foi concluído com sucesso.
+        attach:
+          - /var/log/trivy/relatorio_vulnerabilidades.zip     
+      delegate_to: localhost
+      when: docker_images.stdout_lines | length > 0
+...

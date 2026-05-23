@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  grafana:
+    image: grafana/grafana:12.4.3 
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+      - GF_DATABASE_TYPE=postgres
+      - GF_DATABASE_HOST=192.168.100.201:5432
+      - GF_DATABASE_NAME=grafana
+      - GF_DATABASE_USER=grafana
+      - GF_DATABASE_PASSWORD=grafana
+      - GF_DATABASE_SSL_MODE=disable
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  grafana_data:
