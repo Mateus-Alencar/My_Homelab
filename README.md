@@ -34,6 +34,8 @@ homelab-devops/
 │   └── <a href="./playbooks/update_system.yaml">update_system.yaml</a>  
 │  
 ├── kubernetes/  
+│   └── <a href="./kubernetes/instalacao_minikube.md">Instalação Minikube</a>  
+|
 ├── ShellScripts/  
 │   ├── <a href="./ShellScripts/healthcheck.sh">HealthCheck</a>  
 │   ├── <a href="./ShellScripts/patches.sh">Atualização dos Patches</a>  
